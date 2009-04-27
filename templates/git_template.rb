@@ -9,6 +9,7 @@ GIT_IGNORE_DIR.each { |directory| file "#{directory}/.gitignore"  }
 file ".gitignore", GIT_INGORE_FILES.join("/\n")
 
 remove_public_files
+copy_database_config
 
 git :add => '.'
 

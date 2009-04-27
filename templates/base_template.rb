@@ -1,0 +1,2 @@
+remove_public_files
+copy_database_config
