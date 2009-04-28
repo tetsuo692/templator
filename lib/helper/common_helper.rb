@@ -1,4 +1,5 @@
 require 'readline'
+include Readline
 
 def ask_list(question, choices = {}, options = {})
   unless choices.empty?
