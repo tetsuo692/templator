@@ -1,8 +1,6 @@
 require 'tmpdir'
 
-temp_dir = Dir.mktmpdir
-
-TEMPLATOR_ROOT="#{temp_dir}/vendor/templator"
+TEMPLATOR_ROOT="#{Dir.tmpdir}/vendor/templator"
 
 git :clone => "git://github.com/tetsuo692/templator.git #{TEMPLATOR_ROOT}"
 
@@ -13,5 +11,3 @@ require "#{TEMPLATOR_ROOT}/lib/helper/common_helper"
 ask_list("Which scm should I use ?",
           {:git => Proc.new{load_template("#{TEMPLATOR_ROOT}/templates/git_template.rb")},
            :none => Proc.new{load_template("#{TEMPLATOR_ROOT}/templates/base_template.rb")}}, :default => :git)
-           
-Dir.rmdir(temp_dir)
