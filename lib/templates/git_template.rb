@@ -18,5 +18,14 @@ git :commit => "-a -m 'Initial commit'"
 load_template("#{TEMPLATOR_TEMPLATES}/test_template.rb")
 
 git :add => '.'
-
 git :commit => "-a -m 'Add testing Framework'"
+
+load_template("#{TEMPLATOR_TEMPLATES}/fixtures_template.rb")
+
+git :add => '.'
+git :commit => "-a -m 'Add fixtures Framework'"
+
+load_template("#{TEMPLATOR_TEMPLATES}/views_template.rb")
+
+git :add => '.'
+git :commit => "-a -m 'Add view Framework'"
