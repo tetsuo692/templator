@@ -29,6 +29,6 @@ end
 
 def copy_database_config
   inside("config") do
-    run "mv database.yml database.yml.example"
+    run "cp database.yml database.yml.example"
   end
 end
