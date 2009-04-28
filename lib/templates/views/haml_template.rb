@@ -1,5 +1,5 @@
 gem "haml"
 
 in_root do
-  run "haml ."
+  run "haml —rails ."
 end
