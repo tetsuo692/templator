@@ -1,11 +1,22 @@
-# require 'optparse'
-# 
-# def ask_list(list = {})
-#   unless list.empty?
-#     opts = OptionParser.new
-#     opts
-#   end
-# end
+require 'readline'
+
+def ask_list(question, choices = {}, options = {})
+  unless choices.empty?
+    
+    prompt = "your choice "
+    prompt << "[#{options[:default]}] " if options[:default]
+    prompt << ":"
+    
+    log "#{question}\n"
+    choices.keys.each { |choice| log "- #{choice}\n"}
+    
+    user_choice = readline("choice [#{value}]: ", true)
+    
+    user_choice =  options[:default] if user_choice.blank?
+    
+    choices[user_choice.to_sym].call
+  end
+end
 
 def remove_public_files
   inside("public") do
