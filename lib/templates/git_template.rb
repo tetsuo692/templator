@@ -15,7 +15,7 @@ git :add => '.'
 
 git :commit => "-a -m 'Initial commit'"
 
-load_template("#{TEMPLATOR_ROOT}/templates/test_template.rb")
+load_template("#{TEMPLATOR_TEMPLATES}/test_template.rb")
 
 git :add => '.'
 
