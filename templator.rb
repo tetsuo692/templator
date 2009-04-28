@@ -1,8 +1,7 @@
 require 'tmpdir'
+require 'fileutils'
 
-tmp_dir = Dir.tmpdir
-
-TEMPLATOR_ROOT="#{tmp_dir}/templator"
+TEMPLATOR_ROOT="#{Dir.tmpdir}/templator"
 
 git :clone => "git://github.com/tetsuo692/templator.git #{TEMPLATOR_ROOT}"
 
@@ -15,4 +14,4 @@ ask_list("Which scm should I use ?",
            :none => Proc.new{load_template("#{TEMPLATOR_ROOT}/templates/base_template.rb")}}, :default => :git)
            
 log 'clean up'
-Dir.rmdir(tmp_dir)
+FileUtils.rm_r(TEMPLATOR_ROOT)
