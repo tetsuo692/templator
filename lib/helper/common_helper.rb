@@ -7,10 +7,11 @@ def ask_list(question, choices = {}, options = {})
     prompt = "your choice "
     prompt << "[#{options[:default]}] " if options[:default]
     prompt << ":"
-    
-    log "#{question}\n"
-    choices.keys.each { |choice| log "- #{choice}\n"}
-    
+    log '-' * question.size
+    log "#{question}"
+    log '-' * question.size
+    choices.keys.each { |choice| log "- #{choice}"}
+    log '-' * question.size
     user_choice = readline(prompt, true)
     
     user_choice =  options[:default] if user_choice.blank?
