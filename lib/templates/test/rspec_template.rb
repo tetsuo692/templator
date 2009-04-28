@@ -10,4 +10,5 @@ end
 
 rake 'gems:install', :sudo => true, :env => 'test'
 
+generate :rspec
 generate :cucumber if use_cucumber_webrat

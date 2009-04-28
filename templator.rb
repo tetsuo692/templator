@@ -14,6 +14,6 @@ ask_list("Which scm should I use ?",
           {:git => Proc.new{load_template("#{TEMPLATOR_TEMPLATES}/git_template.rb")},
            :none => Proc.new{load_template("#{TEMPLATOR_TEMPLATES}/base_template.rb")}}, :default => :git)
            
-log 'clean up'
+log '', 'clean up'
 
 FileUtils.rm_r(TEMPLATOR_ROOT)
