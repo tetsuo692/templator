@@ -1,0 +1,10 @@
+== Yet Another Collection of Rails Templates
+
+Based on yizzreel rails-templates (http://github.com/yizzreel/rails-templates/).
+
+== How to use it ?
+
+Just call it as a remote rails template :
+
+  rails your_app_name -m http://github.com/tetsuo692/templator/raw/master/templator.rb
+  
